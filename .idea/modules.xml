@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:\Users\17259212\AndroidStudioProjects\PokedexApp\Pokedex.iml" filepath="C:\Users\17259212\AndroidStudioProjects\PokedexApp\Pokedex.iml" />
-      <module fileurl="file://$PROJECT_DIR$/PokedexApp.iml" filepath="$PROJECT_DIR$/PokedexApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\17259212\AndroidStudioProjects\PokedexApp\app\app.iml" filepath="C:\Users\17259212\AndroidStudioProjects\PokedexApp\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poke.iml" filepath="$PROJECT_DIR$/poke.iml" />
     </modules>
   </component>
 </project>
