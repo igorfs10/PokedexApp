@@ -3,7 +3,6 @@ package br.com.senaijandira.pokedex.service;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-Gson gson
 
 public class ServiceFactory {
 
