@@ -1,17 +1,13 @@
 package br.com.senaijandira.pokedex;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.List;
 
 import br.com.senaijandira.pokedex.adapter.PokemonAdapter;
 import br.com.senaijandira.pokedex.model.NamedApiResource;
-import br.com.senaijandira.pokedex.model.Pokemon;
 import br.com.senaijandira.pokedex.presenter.MainPresenter;
 import br.com.senaijandira.pokedex.service.ServiceFactory;
 import br.com.senaijandira.pokedex.view.MainView;
@@ -48,13 +44,5 @@ public class MainActivity extends AppCompatActivity implements MainView {
     public void preencherLista(List<NamedApiResource> lstPokemons) {
         adapter.clear();
         adapter.addAll(lstPokemons);
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Pokemon pokemonClicado = PokemonAdapter.getItem(position);
-        Intent intent = new Intent(this, VisualizarActivity.class);
-        intent.putExtra("idAluno", pokemonClicado.getId());
-        startActivity(intent);
     }
 }

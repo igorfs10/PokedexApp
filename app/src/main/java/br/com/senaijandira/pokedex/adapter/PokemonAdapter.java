@@ -35,9 +35,11 @@ public class PokemonAdapter extends ArrayAdapter<NamedApiResource>{
         TextView txtId = v.findViewById(R.id.txtId);
         TextView txtNome = v.findViewById(R.id.txtNome);
 
-        //txtId.setText(pokemon.getId() + "");
+        String url = pokemon.getUrl();
+        String[] parts = url.split("/");
+        int id = Integer.parseInt(parts[parts.length - 1]);
+        txtId.setText(id + "");
         txtNome.setText(pokemon.getName());
-
         return v;
     }
 }
