@@ -42,7 +42,7 @@ public class PokemonAdapter extends ArrayAdapter<NamedApiResource>{
         String name = pokemon.getName();
         char primeiraLetraMaiuscula =  Character.toUpperCase(name.charAt(1));
         name = primeiraLetraMaiuscula + name.substring(1, name.length() - 1);
-        txtNome.setText(pokemon.getName());
+        txtNome.setText(name);
         return v;
     }
 }
