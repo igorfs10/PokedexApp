@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PokedexApp.iml" filepath="$PROJECT_DIR$/PokedexApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/poke.iml" filepath="$PROJECT_DIR$/poke.iml" />
+      <module fileurl="file://C:\Users\17259212\AndroidStudioProjects\PokedexApp\poke.iml" filepath="C:\Users\17259212\AndroidStudioProjects\PokedexApp\poke.iml" />
     </modules>
   </component>
 </project>
