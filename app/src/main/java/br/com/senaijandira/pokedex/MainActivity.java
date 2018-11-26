@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity implements MainView {
         lstPokemon.setAdapter(adapter);
 
         presenter = new MainPresenter(this, ServiceFactory.create());
-
     }
 
     @Override
