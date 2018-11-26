@@ -48,4 +48,5 @@ public class Pokemon {
     public void setTypes(List<Type> types) {
         this.types = types;
     }
+
 }

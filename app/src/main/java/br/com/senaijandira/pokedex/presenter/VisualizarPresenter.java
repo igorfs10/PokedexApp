@@ -2,7 +2,6 @@ package br.com.senaijandira.pokedex.presenter;
 
 import android.util.Log;
 
-import br.com.senaijandira.pokedex.model.ApiResult;
 import br.com.senaijandira.pokedex.model.Pokemon;
 import br.com.senaijandira.pokedex.service.PokemonService;
 import br.com.senaijandira.pokedex.view.VisualizarView;
@@ -22,12 +21,12 @@ public class VisualizarPresenter {
 
     public void carregarPokemon(int id){
         Call<Pokemon> call = service.obterPokemonPorId(id);
-
         call.enqueue(new Callback<Pokemon>() {
             @Override
             public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
                 Pokemon pokemon = response.body();
                 visualizarView.preencherPokemon(pokemon);
+
             }
 
             @Override
@@ -35,6 +34,8 @@ public class VisualizarPresenter {
                 Log.e("ERRO_API", t.getMessage());
             }
         });
+
     }
+
 
 }

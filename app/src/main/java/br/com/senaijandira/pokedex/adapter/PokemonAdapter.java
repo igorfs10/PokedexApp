@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 import br.com.senaijandira.pokedex.R;
 import br.com.senaijandira.pokedex.model.NamedApiResource;
+import br.com.senaijandira.pokedex.model.Pokemon;
 
 public class PokemonAdapter extends ArrayAdapter<NamedApiResource>{
 
@@ -29,7 +30,6 @@ public class PokemonAdapter extends ArrayAdapter<NamedApiResource>{
             v = LayoutInflater.from(getContext())
                     .inflate(R.layout.adapter_pokemon, parent, false);
         }
-
         NamedApiResource pokemon = getItem(position);
 
         TextView txtId = v.findViewById(R.id.txtId);
@@ -40,8 +40,8 @@ public class PokemonAdapter extends ArrayAdapter<NamedApiResource>{
         int id = Integer.parseInt(parts[parts.length - 1]);
         txtId.setText(id + "");
         String name = pokemon.getName();
-        char primeiraLetraMaiuscula =  Character.toUpperCase(name.charAt(1));
-        name = primeiraLetraMaiuscula + name.substring(1, name.length() - 1);
+        char primeiraLetraMaiuscula =  Character.toUpperCase(name.charAt(0));
+        name = primeiraLetraMaiuscula + name.substring(1, name.length());
         txtNome.setText(name);
         return v;
     }

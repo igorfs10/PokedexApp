@@ -16,12 +16,11 @@ import br.com.senaijandira.pokedex.presenter.MainPresenter;
 import br.com.senaijandira.pokedex.service.ServiceFactory;
 import br.com.senaijandira.pokedex.view.MainView;
 
-public class MainActivity extends AppCompatActivity implements MainView {
+public class MainActivity extends AppCompatActivity implements MainView, AdapterView.OnItemClickListener {
 
     ListView lstPokemon;
     PokemonAdapter adapter;
     MainPresenter presenter;
-    PokemonAdapter pokemonAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
         adapter = new PokemonAdapter(this);
 
         lstPokemon.setAdapter(adapter);
+        lstPokemon.setOnItemClickListener(this);
 
         presenter = new MainPresenter(this, ServiceFactory.create());
     }
@@ -51,9 +51,13 @@ public class MainActivity extends AppCompatActivity implements MainView {
     }
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Pokemon pokemonClicado = pokemonAdapter.getItem(position);
+        NamedApiResource pokemon = adapter.getItem(position);
+        String url = pokemon.getUrl();
+        String[] parts = url.split("/");
+        int idPoke = Integer.parseInt(parts[parts.length - 1]);
+
         Intent intent = new Intent(this, VisualizarActivity.class);
-        intent.putExtra("idPokemon", pokemonClicado.getId());
+        intent.putExtra("idPoke", idPoke);
         startActivity(intent);
     }
 }
