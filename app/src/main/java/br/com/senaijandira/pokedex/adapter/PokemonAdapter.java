@@ -39,6 +39,9 @@ public class PokemonAdapter extends ArrayAdapter<NamedApiResource>{
         String[] parts = url.split("/");
         int id = Integer.parseInt(parts[parts.length - 1]);
         txtId.setText(id + "");
+        String name = pokemon.getName();
+        char primeiraLetraMaiuscula =  Character.toUpperCase(name.charAt(1));
+        name = primeiraLetraMaiuscula + name.substring(1, name.length() - 1);
         txtNome.setText(pokemon.getName());
         return v;
     }
