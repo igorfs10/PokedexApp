@@ -45,5 +45,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
         adapter.clear();
         adapter.addAll(lstPokemons);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/igor
 }
