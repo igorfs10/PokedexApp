@@ -13,10 +13,10 @@ import java.util.ArrayList;
 
 import br.com.senaijandira.pokedex.R;
 import br.com.senaijandira.pokedex.model.NamedApiResource;
-import br.com.senaijandira.pokedex.model.Pokemon;
+import br.com.senaijandira.pokedex.utils.StringUtil;
 
 public class PokemonAdapter extends ArrayAdapter<NamedApiResource>{
-
+    StringUtil util = new StringUtil();
     public PokemonAdapter(Context ctx){
         super(ctx, 0, new ArrayList<NamedApiResource>());
     }
@@ -40,9 +40,7 @@ public class PokemonAdapter extends ArrayAdapter<NamedApiResource>{
         int id = Integer.parseInt(parts[parts.length - 1]);
         txtId.setText(id + "");
         String name = pokemon.getName();
-        char primeiraLetraMaiuscula =  Character.toUpperCase(name.charAt(0));
-        name = primeiraLetraMaiuscula + name.substring(1, name.length());
-        txtNome.setText(name);
+        txtNome.setText(util.primeiraMaiuscula(name));
         return v;
     }
 }

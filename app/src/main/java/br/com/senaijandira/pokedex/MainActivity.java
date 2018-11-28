@@ -11,7 +11,6 @@ import java.util.List;
 
 import br.com.senaijandira.pokedex.adapter.PokemonAdapter;
 import br.com.senaijandira.pokedex.model.NamedApiResource;
-import br.com.senaijandira.pokedex.model.Pokemon;
 import br.com.senaijandira.pokedex.presenter.MainPresenter;
 import br.com.senaijandira.pokedex.service.ServiceFactory;
 import br.com.senaijandira.pokedex.view.MainView;
@@ -38,12 +37,11 @@ public class MainActivity extends AppCompatActivity implements MainView, Adapter
     }
 
     @Override
-    protected void onResume() {
+    protected void onResume(){
         super.onResume();
 
         presenter.carregarPokemons();
     }
-
     @Override
     public void preencherLista(List<NamedApiResource> lstPokemons) {
         adapter.clear();

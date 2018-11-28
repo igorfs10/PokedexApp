@@ -1,27 +1,28 @@
 package br.com.senaijandira.pokedex;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.List;
+
 import br.com.senaijandira.pokedex.model.Pokemon;
-import br.com.senaijandira.pokedex.model.PokemonFormSprites;
+import br.com.senaijandira.pokedex.model.Type;
 import br.com.senaijandira.pokedex.presenter.VisualizarPresenter;
 import br.com.senaijandira.pokedex.service.ServiceFactory;
+import br.com.senaijandira.pokedex.utils.StringUtil;
 import br.com.senaijandira.pokedex.view.VisualizarView;
 
 public class VisualizarActivity extends AppCompatActivity implements VisualizarView{
-
+    StringUtil util = new StringUtil();
     VisualizarPresenter presenter;
     ImageView imgPokemon;
-    TextView txtNome;
-    TextView txtId;
-    TextView txtTipo1;
-    TextView txtTipo2;
+    TextView txtNome, txtId, txtTipo1, txtTipo2;
+    List<Type> tipos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +43,17 @@ public class VisualizarActivity extends AppCompatActivity implements VisualizarV
 
     @Override
     public void preencherPokemon(Pokemon pokemon){
-
+        Picasso.get().load(pokemon.getSprites().getFront_default()).into(imgPokemon);
+        tipos = pokemon.getTypes();
+        txtNome.setText(util.primeiraMaiuscula(pokemon.getSpecies().getName()));
+        txtId.setText(pokemon.getId()+"");
+        if(tipos.get(0).getSlot() == 2){
+            txtTipo1.setText(util.primeiraMaiuscula(tipos.get(1).getType().getName()));
+            txtTipo2.setText(util.primeiraMaiuscula(tipos.get(0).getType().getName()));
+        }else{
+            txtTipo1.setText(util.primeiraMaiuscula(tipos.get(0).getType().getName()));
+            txtTipo2.setText("");
+        }
     }
 
 
