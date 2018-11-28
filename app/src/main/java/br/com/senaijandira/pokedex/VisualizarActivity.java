@@ -16,10 +16,12 @@ import br.com.senaijandira.pokedex.model.Type;
 import br.com.senaijandira.pokedex.presenter.VisualizarPresenter;
 import br.com.senaijandira.pokedex.service.ServiceFactory;
 import br.com.senaijandira.pokedex.utils.StringUtil;
+import br.com.senaijandira.pokedex.utils.corTipo;
 import br.com.senaijandira.pokedex.view.VisualizarView;
 
 public class VisualizarActivity extends AppCompatActivity implements VisualizarView{
     StringUtil util = new StringUtil();
+    corTipo cor = new corTipo();
     VisualizarPresenter presenter;
     ImageView imgPokemon;
     TextView txtNome, txtId, txtTipo1, txtTipo2, txtHp, txtSpeed, txtAtk, txtDef, txtSpAtk, txtSpDef;
@@ -66,6 +68,7 @@ public class VisualizarActivity extends AppCompatActivity implements VisualizarV
             txtTipo1.setText(util.primeiraMaiuscula(tipos.get(0).getType().getName()));
             txtTipo2.setText("");
         }
+
         txtHp.setText(stats.get(5).getBase_stat()+"");
         txtSpeed.setText(stats.get(0).getBase_stat()+"");
         txtAtk.setText(stats.get(4).getBase_stat()+"");
