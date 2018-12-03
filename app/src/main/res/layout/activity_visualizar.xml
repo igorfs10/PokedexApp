@@ -18,22 +18,22 @@
             android:id="@+id/imgPokemon"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
+
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Bulbasaur"
             android:textStyle="bold"
             android:textSize="25sp"
             android:gravity="center"
             android:id="@id/txtNome"
             android:fontFamily="serif"
 
+
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1"
             android:textStyle="bold"
             android:textSize="20sp"
             android:gravity="center"
@@ -46,6 +46,12 @@
             android:layout_height="wrap_content"
             android:id="@+id/cor1"
             android:layout_gravity="center"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:layout_marginBottom="10dp"
+
             >
             <TextView
                 android:layout_width="wrap_content"
@@ -53,6 +59,7 @@
                 android:layout_gravity="center"
                 android:textSize="16sp"
                 android:id="@+id/txtTipo1"
+
                 />
         </LinearLayout>
         <LinearLayout
@@ -60,6 +67,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/cor2"
             android:layout_gravity="center"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
             >
             <TextView
                 android:layout_width="wrap_content"
@@ -67,6 +78,7 @@
                 android:layout_gravity="center"
                 android:textSize="16sp"
                 android:id="@+id/txtTipo2"
+
                 />
         </LinearLayout>
 
@@ -75,34 +87,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:textSize="15dp"
+            android:textSize="20dp"
+            android:fontFamily="serif"
             android:text="HP: "
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtHp"
-            android:textSize="15dp"
+            android:textSize="18dp"
+            android:fontFamily="serif"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Speed: "
-            android:textSize="15dp"
+            android:fontFamily="serif"
+            android:textSize="20dp"
             android:layout_marginLeft="165dp"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtSpeed"
-            android:textSize="15dp"
+            android:textSize="18dp"
+            android:fontFamily="serif"
             />
     </LinearLayout>
     <LinearLayout
@@ -110,33 +126,38 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="10dp"
+
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:textSize="15dp"
+            android:textSize="20dp"
             android:text="Attack: "
+            android:fontFamily="serif"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtAtk"
-            android:textSize="15dp"
+            android:textSize="18dp"
+            android:fontFamily="serif"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Defense: "
-            android:textSize="15dp"
+            android:textSize="20dp"
             android:layout_marginLeft="140dp"
+            android:fontFamily="serif"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtDef"
-            android:textSize="15dp"
+            android:textSize="18dp"
+            android:fontFamily="serif"
             />
 
     </LinearLayout>
@@ -150,28 +171,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:textSize="15dp"
+            android:textSize="20dp"
             android:text="Sp.Atk: "
+            android:fontFamily="serif"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtSpAtk"
-            android:textSize="15dp"
+            android:textSize="18dp"
+            android:fontFamily="serif"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sp.Def: "
-            android:textSize="15dp"
+            android:textSize="20dp"
             android:layout_marginLeft="140dp"
+            android:fontFamily="serif"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtSpDef"
-            android:textSize="15dp"
+            android:textSize="18dp"
+            android:fontFamily="serif"
             />
     </LinearLayout>
 

@@ -21,12 +21,12 @@ public class MainPresenter {
 
     public void carregarPokemons(){
         Call<ApiResult> call = service.obterPokemons();
-
         call.enqueue(new Callback<ApiResult>() {
             @Override
             public void onResponse(Call<ApiResult> call, Response<ApiResult> response) {
                 ApiResult apiResult = response.body();
                 mainView.preencherLista(apiResult.getResults());
+
             }
 
             @Override

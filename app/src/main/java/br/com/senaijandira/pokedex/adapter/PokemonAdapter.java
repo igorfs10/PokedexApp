@@ -31,7 +31,6 @@ public class PokemonAdapter extends ArrayAdapter<NamedApiResource>{
                     .inflate(R.layout.adapter_pokemon, parent, false);
         }
         NamedApiResource pokemon = getItem(position);
-
         TextView txtId = v.findViewById(R.id.txtId);
         TextView txtNome = v.findViewById(R.id.txtNome);
 
@@ -41,6 +40,7 @@ public class PokemonAdapter extends ArrayAdapter<NamedApiResource>{
         txtId.setText(id + "");
         String name = pokemon.getName();
         txtNome.setText(util.primeiraMaiuscula(name));
+
         return v;
     }
 }

@@ -1,47 +1,46 @@
 package br.com.senaijandira.pokedex.utils;
 
-import br.com.senaijandira.pokedex.R;
-
+import android.graphics.Color;
 public class corTipo {
     public int pegarCorTipo(String tipo){
         if(tipo.equals("bug")){
-            return R.color.typeBug;
+            return Color.parseColor("#A8B820");
         }else if(tipo.equals("dark")){
-            return R.color.typeDark;
+            return Color.parseColor("#705848");
         }else if(tipo.equals("dragon")){
-            return R.color.typeDragon;
+            return Color.parseColor("#7038F8");
         }else if(tipo.equals("electric")){
-            return R.color.typeElectric;
+            return Color.parseColor("#F8D030");
         }else if(tipo.equals("fairy")){
-            return R.color.typeFairy;
+            return Color.parseColor("#EE99AC");
         }else if(tipo.equals("fighting")){
-            return R.color.typeFighting;
+            return Color.parseColor("#C03028");
         }else if(tipo.equals("fire")){
-            return R.color.typeFire;
+            return Color.parseColor("#F08030");
         }else if(tipo.equals("flying")){
-            return R.color.typeFlying;
+            return Color.parseColor("#A890F0");
         }else if(tipo.equals("ghost")){
-            return R.color.typeGhost;
+            return Color.parseColor("#705898");
         }else if(tipo.equals("grass")){
-            return R.color.typeGrass;
+            return Color.parseColor("#78C850");
         }else if(tipo.equals("ground")){
-            return R.color.typeGround;
+            return Color.parseColor("#E0C068");
         }else if(tipo.equals("ice")){
-            return R.color.typeIce;
+            return Color.parseColor("#98D8D8");
         }else if(tipo.equals("normal")){
-            return R.color.typeNormal;
+            return Color.parseColor("#A8A878");
         }else if(tipo.equals("poison")){
-            return R.color.typePoison;
+            return Color.parseColor("#A040A0");
         }else if(tipo.equals("psychic")){
-            return R.color.typePsychic;
+            return Color.parseColor("#F85888");
         }else if(tipo.equals("rock")){
-            return R.color.typeRock;
+            return Color.parseColor("#B8A038");
         }else if(tipo.equals("steel")){
-            return R.color.typeSteel;
+            return Color.parseColor("#B8B8D0");
         }else if(tipo.equals("water")){
-            return R.color.typeWater;
+            return Color.parseColor("#6890F0");
         }else{
-            return R.color.typeQuestion;
+            return Color.parseColor("#68A090");
         }
     }
 }
