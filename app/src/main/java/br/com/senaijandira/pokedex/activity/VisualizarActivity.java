@@ -1,4 +1,4 @@
-package br.com.senaijandira.pokedex;
+package br.com.senaijandira.pokedex.activity;
 
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -14,6 +14,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import br.com.senaijandira.pokedex.R;
 import br.com.senaijandira.pokedex.model.Pokemon;
 import br.com.senaijandira.pokedex.model.Stat;
 import br.com.senaijandira.pokedex.model.Type;
@@ -27,7 +28,7 @@ public class VisualizarActivity extends AppCompatActivity implements VisualizarV
     StringUtil util = new StringUtil();
     corTipo cor = new corTipo();
     VisualizarPresenter presenter;
-    ImageView imgPokemon;
+    ImageView imgPokemon, imgShiny;
     TextView txtNome, txtId, txtTipo1, txtTipo2, txtHp, txtSpeed, txtAtk, txtDef, txtSpAtk, txtSpDef;
     List<Type> tipos;
     List<Stat> stats;
@@ -38,6 +39,7 @@ public class VisualizarActivity extends AppCompatActivity implements VisualizarV
         setContentView(R.layout.activity_visualizar);
 
         imgPokemon = findViewById(R.id.imgPokemon);
+        imgShiny = findViewById(R.id.imgShiny);
         txtNome = findViewById(R.id.txtNome);
         txtId = findViewById(R.id.txtId);
         txtTipo1 = findViewById(R.id.txtTipo1);
@@ -74,6 +76,7 @@ public class VisualizarActivity extends AppCompatActivity implements VisualizarV
     @Override
     public void preencherPokemon(Pokemon pokemon){
         Picasso.get().load(pokemon.getSprites().getFront_default()).into(imgPokemon);
+        Picasso.get().load(pokemon.getSprites().getFront_shiny()).into(imgShiny);
         tipos = pokemon.getTypes();
         stats = pokemon.getStats();
         txtNome.setText(util.primeiraMaiuscula(pokemon.getSpecies().getName()));

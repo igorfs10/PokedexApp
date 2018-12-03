@@ -1,4 +1,4 @@
-package br.com.senaijandira.pokedex;
+package br.com.senaijandira.pokedex.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.ListView;
 
 import java.util.List;
 
+import br.com.senaijandira.pokedex.R;
 import br.com.senaijandira.pokedex.adapter.PokemonAdapter;
 import br.com.senaijandira.pokedex.model.NamedApiResource;
 import br.com.senaijandira.pokedex.presenter.MainPresenter;

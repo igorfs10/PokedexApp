@@ -6,20 +6,65 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="15dp"
-    tools:context=".VisualizarActivity">
+    tools:context=".activity.VisualizarActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
-        <ImageView
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:id="@+id/imgPokemon"
-            android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
-
-            />
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginLeft="18dp"
+                >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+            <ImageView
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:id="@+id/imgPokemon"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="20dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Normal"
+                android:fontFamily="serif"
+                android:layout_marginTop="-10dp"
+                android:layout_marginLeft="-19dp"
+                android:layout_gravity="center"
+                />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:id="@+id/imgShiny"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="20dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shiny"
+                    android:fontFamily="serif"
+                    android:layout_marginTop="-10dp"
+                    android:layout_marginLeft="-19dp"
+                    android:layout_gravity="center"
+                    />
+            </LinearLayout>
+        </LinearLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,8 +73,6 @@
             android:gravity="center"
             android:id="@id/txtNome"
             android:fontFamily="serif"
-
-
             />
         <TextView
             android:layout_width="match_parent"
@@ -51,7 +94,6 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:layout_marginBottom="10dp"
-
             >
             <TextView
                 android:layout_width="wrap_content"
@@ -59,7 +101,6 @@
                 android:layout_gravity="center"
                 android:textSize="16sp"
                 android:id="@+id/txtTipo1"
-
                 />
         </LinearLayout>
         <LinearLayout
@@ -81,7 +122,6 @@
 
                 />
         </LinearLayout>
-
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -104,14 +144,13 @@
             android:textSize="18dp"
             android:fontFamily="serif"
             />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Speed: "
             android:fontFamily="serif"
             android:textSize="20dp"
-            android:layout_marginLeft="165dp"
+            android:layout_marginLeft="174dp"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -126,7 +165,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="10dp"
-
         >
         <TextView
             android:layout_width="wrap_content"
@@ -159,7 +197,6 @@
             android:textSize="18dp"
             android:fontFamily="serif"
             />
-
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -199,6 +236,4 @@
             android:fontFamily="serif"
             />
     </LinearLayout>
-
-
 </LinearLayout>
