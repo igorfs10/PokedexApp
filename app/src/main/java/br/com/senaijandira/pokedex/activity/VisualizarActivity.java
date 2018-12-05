@@ -1,11 +1,12 @@
 package br.com.senaijandira.pokedex.activity;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -24,7 +25,7 @@ import br.com.senaijandira.pokedex.utils.StringUtil;
 import br.com.senaijandira.pokedex.utils.corTipo;
 import br.com.senaijandira.pokedex.view.VisualizarView;
 
-public class VisualizarActivity extends AppCompatActivity implements VisualizarView{
+public class VisualizarActivity extends Activity implements VisualizarView{
     StringUtil util = new StringUtil();
     corTipo cor = new corTipo();
     VisualizarPresenter presenter;
@@ -32,7 +33,8 @@ public class VisualizarActivity extends AppCompatActivity implements VisualizarV
     TextView txtNome, txtId, txtTipo1, txtTipo2, txtHp, txtSpeed, txtAtk, txtDef, txtSpAtk, txtSpDef;
     List<Type> tipos;
     List<Stat> stats;
-    LinearLayout cor1, cor2;
+    LinearLayout cor1, cor2, principal;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +54,7 @@ public class VisualizarActivity extends AppCompatActivity implements VisualizarV
         txtSpDef = findViewById(R.id.txtSpDef);
         cor1 = findViewById(R.id.cor1);
         cor2 = findViewById(R.id.cor2);
-
+        principal = findViewById(R.id.principal);
 
 
 
@@ -66,6 +68,7 @@ public class VisualizarActivity extends AppCompatActivity implements VisualizarV
 
         GradientDrawable gradientDrawable   =   new GradientDrawable();
         gradientDrawable.setCornerRadii(new float[]{15, 15, 15, 15, 15, 15, 15, 15});
+        gradientDrawable.setStroke(2, Color.BLACK);
         if(Slot == 1){
             gradientDrawable.setColor(cor.pegarCorTipo(tipos.get(1).getType().getName()));
         }else if(Slot == 2){
@@ -73,6 +76,7 @@ public class VisualizarActivity extends AppCompatActivity implements VisualizarV
         }
         return gradientDrawable;
     }
+
     @Override
     public void preencherPokemon(Pokemon pokemon){
         Picasso.get().load(pokemon.getSprites().getFront_default()).into(imgPokemon);
@@ -81,7 +85,11 @@ public class VisualizarActivity extends AppCompatActivity implements VisualizarV
         stats = pokemon.getStats();
         txtNome.setText(util.primeiraMaiuscula(pokemon.getSpecies().getName()));
         txtId.setText(pokemon.getId()+"");
+        int colors[] = new int[2];
+
         if(tipos.get(0).getSlot() == 2){
+            colors[0] = cor.pegarCorTipo(tipos.get(1).getType().getName());
+            colors[1] = cor.pegarCorTipo(tipos.get(0).getType().getName());
             txtTipo1.setText(util.primeiraMaiuscula(tipos.get(1).getType().getName()));
             cor1.setBackground(getDrawableWithRadius(1));
             txtTipo2.setText(util.primeiraMaiuscula(tipos.get(0).getType().getName()));
@@ -89,8 +97,18 @@ public class VisualizarActivity extends AppCompatActivity implements VisualizarV
         }else{
             txtTipo1.setText(util.primeiraMaiuscula(tipos.get(0).getType().getName()));
             cor1.setBackground(getDrawableWithRadius(2));
+            colors[0] = cor.pegarCorTipo(tipos.get(0).getType().getName());
+            colors[1] = cor.pegarCorTipo(tipos.get(0).getType().getName());
             txtTipo2.setText("");
         }
+
+        Window window = this.getWindow();
+        window.setStatusBarColor(colors[0]);
+        window.setNavigationBarColor(colors[1]);
+        GradientDrawable gradientDrawable = new GradientDrawable(
+                GradientDrawable.Orientation.TOP_BOTTOM, colors);
+
+        principal.setBackgroundDrawable(gradientDrawable);
 
         txtHp.setText(stats.get(5).getBase_stat()+"");
         txtSpeed.setText(stats.get(0).getBase_stat()+"");
